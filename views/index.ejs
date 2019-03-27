@@ -18,8 +18,8 @@
                 <h2><%= movies[i].title %></h2>
                 <p><%= movies[i].description %></p>
                 <i><%= movies[i].genre %></i><br><br>
-                <a href="/upvote/<%= movies[i].id %>">Upvote</a>
-                <a href="/downvote/<%= movies[i].id %>">Downvote</a>
+                <a href="/upvote/<%= movies[i].id %>"><i class="far fa-thumbs-up"></i></a>
+                <a href="/downvote/<%= movies[i].id %>"><i class="far fa-thumbs-down"></i></a>
                 <br>
                 <b>Votes: <%= movies[i].votes %></b>
             </div>
