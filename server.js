@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/movies/new', (req, res) => {
+    res.render('new_movie');
+})
+
 app.listen(port, () => {
     console.log(`\n Listening on port ${port}`);
 })
