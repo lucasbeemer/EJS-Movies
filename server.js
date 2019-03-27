@@ -22,6 +22,14 @@ app.get('/movies/new', (req, res) => {
     res.render('new_movie');
 })
 
+app.get('/upvote/:id', (req, res) => {
+    knex('movies').where('id', req.params.id)
+    .increment('votes', 1)
+    .then(() => {
+        res.redirect('/')
+    })
+})
+
 // CREATE a piece of data
 app.post('/movies', (req, res) => {
     knex('movies').insert({
