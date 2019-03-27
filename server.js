@@ -30,6 +30,14 @@ app.get('/upvote/:id', (req, res) => {
     })
 })
 
+app.get('/downvote/:id', (req, res) => {
+    knex('movies').where('id', req.params.id)
+    .increment('votes', -1)
+    .then(() => {
+        res.redirect('/')
+    })
+})
+
 // CREATE a piece of data
 app.post('/movies', (req, res) => {
     knex('movies').insert({
