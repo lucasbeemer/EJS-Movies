@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>EJS-Movies</title>
+    </head>
+    <body>
+        <h1>EJS Movies</h1>
+        <a href="#">Add a movie</a>
+        <% for(let i = 0; i < movies.length; i++){ %>
+            <div class="">
+                <hr>
+                <h2><%= movies[i].title %></h2>
+                <p><%= movies[i].description %></p>
+                <a href="#">Upvote</a>
+                <a href="#">Downvote</a>
+                <br>
+                <b>Votes: <%= movies[i].votes %></b>
+            </div>
+        <% } %>
+    </body>
+</html>
