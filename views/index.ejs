@@ -10,19 +10,25 @@
         <title>EJS-Movies</title>
     </head>
     <body>
-        <h1>EJS Movies</h1>
-        <a href="/movies/new">Add Movie</a>
-        <% for(let i = 0; i < movies.length; i++){ %>
-            <div class="">
-                <hr>
-                <h2><%= movies[i].title %></h2>
-                <p><%= movies[i].description %></p>
-                <i><%= movies[i].genre %></i><br><br>
-                <a href="/upvote/<%= movies[i].id %>"><i class="far fa-thumbs-up"></i></a>
-                <a href="/downvote/<%= movies[i].id %>"><i class="far fa-thumbs-down"></i></a>
-                <br>
-                <b>Votes: <%= movies[i].votes %></b>
+        <div class="container">
+            <header class="header">
+                <h1 class="title">EJS Movies</h1>
+                <a class="add-movie" href="/movies/new">Add Movie</a>
+            </header>
+            <div class="movie-list">
+                <% for(let i = 0; i < movies.length; i++){ %>
+                <div class="single-movie <%= movies[i].title.replace(' ', '') %>">
+                    <hr>
+                    <h2 class="movie-title"><%= movies[i].title %></h2>
+                    <p class="movie-description"><%= movies[i].description %></p>
+                    <p class="genre"><%= movies[i].genre %></p>
+                    <a class="upvote" href="/upvote/<%= movies[i].id %>"><i class="far fa-thumbs-up"></i></a>
+                    <a class="downvote" href="/downvote/<%= movies[i].id %>"><i class="far fa-thumbs-down"></i></a>
+                    <br>
+                    <b class="votes">Votes: <%= movies[i].votes %></b>
+                </div>
+                <% } %>
             </div>
-        <% } %>
+        </div>
     </body>
 </html>
