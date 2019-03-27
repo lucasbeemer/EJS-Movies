@@ -2,11 +2,16 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" 
+              href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+              integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+              crossorigin="anonymous">
         <title>EJS-Movies</title>
     </head>
     <body>
         <h1>New Movie</h1>
-        <a href="/">Back</a>
+        <a href="/"><i class="fas fa-arrow-circle-left"></i></a>
         <form action="/movies" method="post">
             <input type="text" name="title" placeholder="Title">
             <input type="text" name="description" placeholder="Description">
