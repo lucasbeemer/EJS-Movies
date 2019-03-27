@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 // GET all data
 app.get('/', (req, res) => {
-    knex('movies').then((results) => {
+    knex('movies').orderBy('votes', 'DESC').then((results) => {
         res.render('index', {movies: results});
     })
 })
