@@ -7,8 +7,11 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 8000;
 
 app.set('view engine', 'ejs');
-
 app.use(bodyParser.urlencoded({extended:true}));
+
+//App Uses Public folder for CSS styles
+app.use('/public', express.static('public'));
+
 
 // GET all data
 app.get('/', (req, res) => {
@@ -22,6 +25,7 @@ app.get('/movies/new', (req, res) => {
     res.render('new_movie');
 })
 
+// Adds UPVOTE
 app.get('/upvote/:id', (req, res) => {
     knex('movies').where('id', req.params.id)
     .increment('votes', 1)
@@ -30,6 +34,7 @@ app.get('/upvote/:id', (req, res) => {
     })
 })
 
+// Subtracts DOWNVOTE
 app.get('/downvote/:id', (req, res) => {
     knex('movies').where('id', req.params.id)
     .increment('votes', -1)
