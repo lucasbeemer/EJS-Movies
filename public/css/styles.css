@@ -1,11 +1,154 @@
 body {
-    width: 100%;
+    width: 99%;
 }
 
 .container {
-    width: 95%;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.container .header {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .header .title {
+    margin: 15px 0px;
+}
+
+.container .header .add-movie {
+    border: solid black 1px;
+    border-radius: 15px;
+    padding: 2px 7px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.container .header .add-movie:hover {
+    font-size: 20px;
+    background-color: #F3F3F3;
+    color: #7E7E7E;
+    border: solid #7E7E7E 1px;
+}
+
+.container .movie-list {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container .movie-list .single-movie {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: solid black 1px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.container .movie-list .single-movie .movie-info {
+    width: 50%;
+    height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container .movie-list .single-movie .movie-title {
+    margin: 0px;
+}
+
+.container .movie-list .single-movie .movie-info a {
+    color: black;
+}
+
+.container .movie-list .single-movie .movie-info .upvote:hover {
+    color: blue;
+}
+
+.container .movie-list .single-movie .movie-info .downvote:hover {
+    color: red;
+}
+
+.new-movie-container {
+    width: 50%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-movie-container .new-movie {
+    width: 60%;
+    text-align: center;
+}
+
+.new-movie-container .back {
+    width: 60px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.new-movie-container .back:hover {
+    color: #7E7E7E;
+}
+
+.new-movie-container .form {
+    width: 60%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-movie-container .form textarea {
+    margin: 7px 0px;
+    font-size: 16px;
+}
+.new-movie-container .form textarea:focus {
+    outline: none;
+}
+
+.new-movie-container .form .title {
+    width: 65%;
+    height: 20px;
+}
+
+.new-movie-container .form .genre {
+    width: 30%;
+    height: 20px;
+}
+
+.new-movie-container .form .description {
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 100px;
+    width: 98%;
+}
+
+.new-movie-container .form .submit {
+    font-size: 20px;
+    width: 100px;
+    border: solid black 1px;
+    border-radius: 15px;
+}
+
+.new-movie-container .form .submit:focus {
+    outline: none;
+}
+
+.new-movie-container .form .submit:hover {
+    cursor: pointer;
+    background-color: #F3F3F3;
+    color: #7E7E7E;
+    border: solid #7E7E7E 1px;
 }

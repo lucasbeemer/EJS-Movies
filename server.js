@@ -14,11 +14,26 @@ app.use('/public', express.static('public'));
 
 
 // GET all data
+// app.get('/', (req, res) => {
+//     knex('movies').orderBy('votes', 'DESC').then((results) => {
+//         res.render('index', {movies: results});
+//     })
+// })
+
 app.get('/', (req, res) => {
-    knex('movies').orderBy('votes', 'DESC').then((results) => {
-        res.render('index', {movies: results});
-    })
+    knex.select().from('movies').orderBy('votes', 'DESC').then(function(movies) {
+        knex.select().from('users').then(function(users) {
+            res.render('index',
+            { users: users,
+              movies: movies
+            });
+        });
+    }).catch(function(error) {
+        console.log(error);
+    });
 })
+
+
 
 // GET add new data page
 app.get('/movies/new', (req, res) => {

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="styles.css">
+        <link href= "/public/css/styles.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" 
               href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
               integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
@@ -10,13 +10,15 @@
         <title>EJS-Movies</title>
     </head>
     <body>
-        <h1>New Movie</h1>
-        <a href="/"><i class="fas fa-arrow-circle-left"></i></a>
-        <form action="/movies" method="post">
-            <input type="text" name="title" placeholder="Title">
-            <input type="text" name="description" placeholder="Description">
-            <input type="text" name="genre" placeholder="Genre">
-            <input type="submit" name="" placeholder="Create">
-        </form>
+        <div class="new-movie-container">
+            <h1 class="new-movie">New Movie</h1>
+            <a class="back" href="/"><i class="fas fa-arrow-circle-left">Back</i></a>
+            <form class="form" action="/movies" method="post">
+                <textarea class="title" type="text" name="title" placeholder="Title"></textarea>
+                <textarea class="genre" type="text" name="genre" placeholder="Genre"></textarea>
+                <textarea class="description" type="text" name="description" placeholder="Description"></textarea>
+                <button class="submit" type="submit" name="" placeholder="Create">Add</button>
+            </form>
+        </div>
     </body>
 </html>

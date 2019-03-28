@@ -18,14 +18,14 @@
             <div class="movie-list">
                 <% for(let i = 0; i < movies.length; i++){ %>
                 <div class="single-movie <%= movies[i].title.replace(' ', '') %>">
-                    <hr>
                     <h2 class="movie-title"><%= movies[i].title %></h2>
                     <p class="movie-description"><%= movies[i].description %></p>
-                    <p class="genre"><%= movies[i].genre %></p>
-                    <a class="upvote" href="/upvote/<%= movies[i].id %>"><i class="far fa-thumbs-up"></i></a>
-                    <a class="downvote" href="/downvote/<%= movies[i].id %>"><i class="far fa-thumbs-down"></i></a>
-                    <br>
-                    <b class="votes">Votes: <%= movies[i].votes %></b>
+                    <div class="movie-info">
+                        <p class="genre"><%= movies[i].genre %></p>
+                        <a class="upvote" href="/upvote/<%= movies[i].id %>"><i class="far fa-thumbs-up"></i></a>
+                        <a class="downvote" href="/downvote/<%= movies[i].id %>"><i class="far fa-thumbs-down"></i></a>
+                        <b class="votes">Votes: <%= movies[i].votes %></b>
+                    </div>
                 </div>
                 <% } %>
             </div>
